@@ -42,10 +42,12 @@ const userSchema = new Schema(
   }
 );
 
+// find friend count
 userSchema.virtual('friendCount').get(function () {
   return this.friends.length;
 });
 
 const User = model('user', userSchema);
 
+// Export model across files
 module.exports = User;

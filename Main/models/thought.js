@@ -1,40 +1,42 @@
 const { Schema, model } = require('mongoose');
 
-// Schema to create a course model
-const courseSchema = new Schema(
+const ThoughtsSchema = new Schema(
   {
-    courseName: {
+  thoughtText: {
       type: String,
       required: true,
-    },
-    inPerson: {
-      type: Boolean,
-      default: true,
-    },
-    startDate: {
+      minlength: 1,
+      maxlength: 280
+  },
+  createdAt: {
       type: Date,
-      default: Date.now(),
-    },
-    endDate: {
-      type: Date,
-      // Sets a default value of 12 weeks from now
-      default: () => new Date(+new Date() + 84 * 24 * 60 * 60 * 1000),
-    },
-    students: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'Student',
-      },
-    ],
+      default: Date.now,
+      // Moment
+      get: (createdAtVal) => moment(createdAtVal).format('MMM DD, YYYY [at] hh:mm a')
+  },
+  username: {
+      type: String,
+      required: true
+  },
+  // validate
+  reactions: [ReactionsSchema]
   },
   {
-    toJSON: {
+  toJSON: {
       virtuals: true,
-    },
-    id: false,
+      getters: true
+  },
+  id: false
   }
-);
+)
 
-const Course = model('course', courseSchema);
+// find reaction count
+ThoughtsSchema.virtual('reactionCount').get(function() {
+  return this.reactions.length;
+});
 
-module.exports = Course;
+// creates model
+const Thoughts = model('Thoughts', ThoughtsSchema);
+
+// Export model across files
+module.exports = Thoughts;
