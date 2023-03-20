@@ -1,9 +1,9 @@
 
 const { Schema, Types } = require('mongoose');
-const formatDate = require('../utils/dateFormatter');
+
 
 // Schema to create a reaction model. we dont need to create a model, just need to use the schema for validation of reactions.
-const reactionSchema = new Schema(
+const ReactionsSchema = new Schema(
   {
     reactionId: {
         type: Schema.Types.ObjectId,
@@ -33,4 +33,4 @@ const reactionSchema = new Schema(
   }
 );
 
-module.exports = reactionSchema;
+module.exports = ReactionsSchema;

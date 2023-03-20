@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const validatorE = require('validator');
 
 // Schema to create Student model
 const userSchema = new Schema(
@@ -16,7 +17,7 @@ const userSchema = new Schema(
       trim: true,
       lowercase: true,
       validate:{
-        validator: validator.isEmail,
+        validator: validatorE.isEmail,
         message: '{VALUE} is not a valid email',
         isAsync: false
       }
