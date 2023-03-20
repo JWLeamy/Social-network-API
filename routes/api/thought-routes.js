@@ -8,7 +8,8 @@ const {
 } = require('../../controllers/thought-controller.js');
 
 const {
-  addReaction
+  addReaction,
+  deleteReaction
 } = require('../../controllers/thought-controller.js');
 // -- Provides get route for all thoughts
 router.route('/').get(getAllThoughts);
