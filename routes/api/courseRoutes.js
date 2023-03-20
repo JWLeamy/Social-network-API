@@ -1,10 +1,10 @@
 const router = require('express').Router();
 const {
-  getCourses,
-  getSingleCourse,
-  createCourse,
-  updateCourse,
-  deleteCourse,
+  createThoughts,
+  getAllThoughts,
+  getThoughtsById,
+  updateThoughts,
+  deleteThoughts,
 } = require('../../controllers/courseController.js');
 
 // /api/courses
