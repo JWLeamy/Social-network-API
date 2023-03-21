@@ -49,3 +49,7 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 💻   
   
 `npm start`
+
+## Full Walkthrough
+
+https://drive.google.com/file/d/15DZN31A76J_9kJOSssnwltdk2I5Zgl4f/view
