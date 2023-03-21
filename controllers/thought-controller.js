@@ -12,7 +12,7 @@ const thoughtController = {
         })
         .then(dbThoughtsData => {
             if(!dbThoughtsData) {
-                res.status(404).json({message: 'No thoughts with this particular ID!'});
+                res.status(404).json({message: 'No thoughts with this particular username!'});
                 return;
             }
             res.json(dbThoughtsData)
@@ -53,7 +53,7 @@ const thoughtController = {
 
     // Update a current thought by ID
     updateThoughts({params, body}, res) {
-        Thoughts.findOneAndUpdate({_id: params.id}, body, {new: true, runValidators: true})
+        thought.findOneAndUpdate({_id: params.id}, body, {new: true, runValidators: true})
         .populate({path: 'reactions', select: '-__v'})
         .select('-___v')
         .then(dbThoughtsData => {
