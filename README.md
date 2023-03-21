@@ -52,4 +52,7 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 
 ## Full Walkthrough
 
+[Untitled_ Mar 20, 2023 6_20 PM (2).webm](https://user-images.githubusercontent.com/111401066/226498936-5be1a092-a0f7-47f8-8c60-9dd6edd2c056.webm)
+
+
 https://drive.google.com/file/d/15DZN31A76J_9kJOSssnwltdk2I5Zgl4f/view
